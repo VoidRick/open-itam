@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+/* Определяем стиль всех ссылок на странице */
+:link {
+    text-decoration: none;
+    color: #00F2D4;
+}
+
+body {
+	background-color: #001423;
+    color: #ffffff; /* Делаем текст белым */
+    font-family: "Inter", system-ui, sans-serif; /* Задаём шрифт */
+	letter-spacing: 0; /* межбуквенный интервал */
+	text-rendering: optimizeLegibility; /* Повышаем приоритет качеству отображения текста */
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
+}
+
+*, ::before, ::after {
+	box-sizing: border-box;
+}
+
+* {
+    /* Задаём параметры полосы прокрутки: смешиваем 20% цвета и прозрачность в цветовом пространстве srgb, а цвет под полосой прозрачность */
+	scrollbar-color: color-mix(in srgb, #f9fafb 20%,transparent) transparent;
+}
+
+.navbar {
+  background: linear-gradient(180deg,#00f2d400,#00f2d41a),#001423;
+  display: flex;
+  width: 260px;
+  margin-right: auto; /* Создаём "заполнитель" слева */
+  flex-shrink: 0; /* запрещает сжимать меню */
+  padding: 24px 16px; /* Внутренние отступы - 24px сверху и снизу; 16px слева и справа */
+  margin: 0; /* Убираем стандартный левые отступ списка */
+  padding: 0; /* Убираем стандартные внешние отступы */
+  list-style: none; /* Убираем маркеры списка */
+  margin: 0;
+  flex-direction: column; /* Указываем что все элементы нужно располагать "в столбик" */
+  font-feature-settings: "liga" 0;
+  font-weight: 550; /* толщина шрифта */
+  font-size: 16px; /* Размер шрифта */
+  line-height: 1.5; /* Высота строки */
+  font-variant-ligatures: none;
+}
+
+.navbar ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.navbar li a {
+  display: flex;
+  padding: 12px 14px; /* Внутренние отступы - 12px сверху и снизу; 14px слева и справа */
+  text-decoration: none; /* Убираем подчёркивание ссылок */
+  width: 100%;
+}
+
+.navbar li a:hover:not(.text-uppercase) { /* Класс, отрабатывающий, когда пользователь наводит мышку на элемент */
+    background-color: color-mix(in srgb, #6b7280 10%, transparent); /* Смешать цвета, в цветовом пространстве (SRGB), первый цвет 10%, второй цвет это прозрачность */
+}
+
+.navbar li a.active { /* Отдельный класс для активного элемента. Нужно добавлять класс в HTML */
+    background-color: color-mix(in srgb, #6b7280 10%, transparent); /* Смешать цвета, в цветовом пространстве (SRGB), первый цвет 10%, второй цвет это прозрачность */
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh; /* На всю высоту страницы */
+
+}
+
+.hidden {
+    display: none; /* Не показываем скрытый список */
+}
+
+/* Для заголовков */ 
+.text-uppercase {
+    color: #00f2d4;
+    text-transform: uppercase;
+    padding-top: 16px;
+    font-size: 14px;
+    user-select: none;
+    cursor: default;
+}
+
+.drop_menu {
+    color: #ffffff;
+}
+
+
+main {
+    width: 100%;
+    margin-left: 15px;
+}
+
+.version {
+    opacity: 0.4; /* Текст и всё внутри элемента станет прозрачным на 50% */
+    margin-top: auto;
+    text-align: center;
+}

@@ -1,0 +1,77 @@
+<aside class="navbar">
+    <nav aria-label="Основное меню" class="collapse navbar-collapse" id="sidebar-menu">
+
+        <img src="/static/logo_web.svg" alt="Логотип Open ITAM" width=100% style="align-items: center;">
+
+        <ul> <!-- Общий список -->
+            <li> <!-- Пункт меню -->
+                <a class="drop_menu" href=#>
+                    <i class="mdi mdi-domain" style="margin-right: 8px;"></i>
+                    <span> Организация </span>
+                    <i class="mdi mdi-chevron-down" style="margin-left: auto;"></i>
+                </a>
+                <div class="dropdownMenu hidden"> 
+                    <a class="text-uppercase"> Организация </a>
+                    <a href="/company/organisation"> Регионы </a>
+                    <a> Адреса </a>
+                    <a> Помещения </a>
+                    <a class="text-uppercase"> Сотрудники</a>
+                    <a> Отделы </a>
+                    <a> Сотрудники</a>                            
+                </div>
+            </li>
+
+            <li> 
+                <a class="drop_menu" href=#>
+                    <i class="mdi mdi-desktop-classic" style="margin-right: 8px;"></i>
+                    <span> Оборудование </span>
+                    <i class="mdi mdi-chevron-down" style="margin-left: auto;"></i>
+                </a>
+            </li>
+
+            <li> 
+                <a class="drop_menu" href=#>
+                    <i class="mdi mdi-floppy" style="margin-right: 8px;"></i>
+                    <span> Лицензии </span>
+                    <i class="mdi mdi-chevron-down" style="margin-left: auto;"></i>
+                </a>
+            </li>
+
+            <li> 
+                <a class="drop_menu" href=#>
+                    <i class="mdi mdi-package-variant" style="margin-right: 8px;"></i>
+                    <span> Расходники </span>
+                    <i class="mdi mdi-chevron-down" style="margin-left: auto;"></i>
+                </a>
+            </li>
+
+            <li> 
+                <a class="drop_menu" href=#>
+                    <i class="mdi mdi-cash-multiple" style="margin-right: 8px;"></i>
+                    <span> Счёта </span>
+                    <i class="mdi mdi-chevron-down" style="margin-left: auto;"></i>
+                </a>
+            </li>
+
+            <li> 
+                <a class="drop_menu" href=#>
+                    <i class="mdi mdi-account-group" style="margin-right: 8px;"></i>
+                    <span> Пользователи </span>
+                    <i class="mdi mdi-chevron-down" style="margin-left: auto;"></i>
+                </a>
+            </li>
+
+            <li> 
+                <a class="drop_menu" href=#>
+                    <i class="mdi mdi-cog" style="margin-right: 8px;"></i>
+                    <span> Настройки </span>
+                    <i class="mdi mdi-chevron-down" style="margin-left: auto;"></i>
+                </a>
+            </li>
+        </ul>
+
+    </nav>
+    <div class="version" style="margin-bottom: 10px;"> Open ITAM v1.0.0 </div>
+
+    <script src="{{ url_for('static', path='js/navbar.js')}}" defer></script>
+</aside>

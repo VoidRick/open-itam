@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="474"
+   height="544"
+   viewBox="0 0 473.99999 544"
+   fill="none"
+   version="1.1"
+   id="svg10"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs4" />
+  <g
+     id="mark"
+     transform="translate(-243,-190)">
+    <!-- Broken outer hexagonal ring -->
+    <path
+       fill="url(#navy)"
+       d="m 480,190 123.0248,71.0284 -24.68172,42.75 L 480,247 295,353.8098 294.99965,568.19 480,675 665.00035,568.19 665,454.67 h 52 V 597.16799 L 480,734 243,597.16799 V 326.83201 Z"
+       id="path4"
+       style="display:inline;fill:#1b4ebb;fill-opacity:1" />
+    <!-- Cyan upper-right segment -->
+    <path
+       fill="url(#cyan)"
+       d="M 619.23309,270.38626 717,326.83201 V 435.969 H 665 V 353.8098 L 594.551,313.136 Z"
+       id="path5"
+       style="fill:#00cab0;fill-opacity:1" />
+    <!-- Inner hexagon -->
+    <path
+       fill="url(#navy)"
+       d="m 480,291 148,85.44784 V 549.55216 L 480,635 332,549.55216 V 376.44784 Z"
+       id="path6"
+       style="fill:#1b4ebb;fill-opacity:1" />
+    <!-- Cube -->
+    <path
+       fill="url(#cyan)"
+       d="M 480,357 564.43524,405.74871 480,454.49742 395.56476,405.74871 Z"
+       id="path7"
+       style="fill:#00cab0;fill-opacity:1" />
+    <path
+       fill="url(#cyan)"
+       d="m 388,417 84.201,48.61347 -4.2e-4,98.99953 L 388,516 Z"
+       id="path8"
+       style="fill:#00cab0;fill-opacity:1" />
+    <path
+       fill="url(#cyan)"
+       d="M 487.79981,465.613 572,417 v 99 l -84.20019,48.613 z"
+       id="path9"
+       style="fill:#00cab0;fill-opacity:1" />
+  </g>
+</svg>
