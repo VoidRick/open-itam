@@ -100,3 +100,78 @@ main {
     margin-top: auto;
     text-align: center;
 }
+
+/* Основной контент страницы */
+.page-body {
+  display: block; /* Возвращаем блочный макет */
+  padding: 16px; /* Устанавливаем отступы */
+  background-color: #081b2a; /* Устанавливаем цвет фона */
+  width: 100vw; /* Делаем контент шириной во весь экран */
+  padding: 0px;
+}
+
+header {
+  padding: 4px 16px;
+  border-bottom: 1px solid #374151;
+  display: flex;
+}
+
+/* Общий стиль для всех полей ввода */
+input {
+  padding: 9px 16px;
+  /* display: block; */
+  background-color: #111817;
+  background-clip: padding-box;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  color: inherit;
+
+  font-family: Inter, system-ui, sans-serif;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+}
+
+input:focus {
+  border-color: #80c2be;
+  outline: 0;
+  box-shadow: 0 1px 1px rgba(229, 234, 235, .06),0 0 0 .25rem rgba(0, 133, 125, .25)
+}
+
+/* Поиск по всей базе */
+.general-search {
+  padding-left: 2.5rem;
+}
+
+.input-icon {
+  position: relative; /* Задаём этот элемент как систему координат для дочерних элементов */
+}
+
+.input-icon-addon {
+  position: absolute; /* Включает абсолютное позиционирование при котором элемент "не занимает место" в документе */ 
+  top: 0;    /* Прижать элемент к верхней границе родительского элемента */
+  bottom: 0; /* Прижать элемент к нижней границе родительского элемента */
+  /* При комбинации top 0 и bottom 0 элемент занимает всю высоту родительского элемента */
+  left: 0;   /* Прижать элемент к левой границе родительского элемента */
+
+  width: 40px; /* Ширина элемента */
+
+  display: flex; 
+  align-items: center; /* Центрируем элемент по вертикали */
+  justify-content: center; /* Центрируем элемент по горизонтали */
+
+  color: #6c757d;
+  pointer-events: none; /* Не перехватывать нажатия мыши */
+  z-index: 2; /* Перемещаем слой выше, чем родительский, чтобы он отображался поверх */
+}
+
+div.user {
+  margin-left: auto;
+
+  font-size: 14px;
+  color: rgb(156, 163, 175);
+}
+
+div.user span {
+  display: block;
+}

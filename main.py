@@ -24,5 +24,8 @@ async def favicon():
 async def index(request: Request):
     return templates.TemplateResponse(
         request=request,
-        name="index.html"
+        name="index.html",
+        context= {
+            "user": {"name": "admin", "role": "Администратор"}
+        }
     )

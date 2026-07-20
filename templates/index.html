@@ -19,11 +19,16 @@
     <div class="layout">
         
         <!-- Подключаем бокое меню -->
-         {% include "navbar.html" %}
+        {% include "navbar.html" %}
 
-        <main class="content">
-            <h1>Главная страница</h1>
-        </main>
+        <div class="page-body">
+            <!-- Подключаем header -->
+            {% include "header.html" %}
+        
+            <main class="content">
+                <h1>Главная страница</h1>
+            </main>
+        </div>
     </div>
 </body>
 </html>
