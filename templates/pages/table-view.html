@@ -1,0 +1,104 @@
+<div>
+    <div class="page-header">
+        <h1>{{ page_name }}</h1>
+        <di class="btns" style="display: flex;">
+            <a role="button" href="{{ request.path }}add/" class="btn btn-neon-green"> 
+                <i class="mdi mdi-plus-thick"></i>
+                Добавить
+            </a>
+            <a role="button"href="{{ request.path }}import/" class="btn btn-cyan">
+                <i class="mdi mdi mdi-import"></i>
+                Импорт
+            </a>
+            <div class="dropDown" style="position: relative;">
+                <button class="btn btn-purple" id="export">
+                    <i class="mdi mdi-export"></i>
+                    Экспорт
+                </button>
+                <ul class="dropDownMenu hidden" style="position: absolute; list-style-type: none; inset: 0px 0px auto auto; transform: translate(0px, 33px);">
+                    <li>
+                        <a class="dropDownMenu-item"> Текущий вид </a>
+                        <a class="dropDownMenu-item"> Все данные </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script src="{{ url_for('static', path='js/table-view.js')}}" defer></script>
+    </div>
+
+    <div style="margin-top: 1rem;">
+        <ul class="tabs">
+            <li class="tab">
+                <a class="active-tab">Результат</a>
+            </li>
+            <li class="tab">
+                <a> Фильтр </a>
+            </li>
+        </ul>
+    </div>
+    <div class="page-content">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="checkbox-input" style="width: .25rem;">
+                            <input type="checkbox" title="Выделить все" class="toggle-all">
+                        </th>
+                        {# Получаем названия столбцов из переменной #}
+                        {% for name in table_head %}
+                            {# Записываем название столбца заглавными буквами #}
+                        <th> {{ name | upper }} </th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {# Проверяем что была передана, и не пуста переменная данных таблицы #}
+                    {% if table_data is defined %}
+                        {# Проходимся по каждому столбцу таблицы #}
+                        {% for row in table_data %}
+                            <tr>
+                                <td class="checkbox-input">
+                                    <input type="checkbox" title="Выделить">
+                                </td>
+                                {# Проходимся по каждому столбцу строки #}
+                                {% for column in row %}
+                                    <td>
+                                        {# Записываем в таблицу содержимое #}
+                                        {{ column }}
+                                    </td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="{{ table_head | length }}">
+                                --- Записи не найдены ---
+                            </td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+            <div class="table-footer">
+                <span> Показано {{ showing_records }} из {{ records_out_of }}</span>
+                <div class="dropDown" style="position: relative;">
+                    <button class="btn btn-pagination" id="pagination">
+                        На странице
+                        <i class="mdi mdi-chevron-down"></i>
+                    </button>
+                    <ul class="dropDownMenu hidden">
+                        <li>
+                            <a class="dropDownMenu-item" href="#" hx-get="?per_page=25"> 25</a>
+                            <a class="dropDownMenu-item" href="#" hx-get="?per_page=50"> 50 </a>
+                            <a class="dropDownMenu-item" href="#" hx-get="?per_page=75"> 75 </a>
+                            <a class="dropDownMenu-item" href="#" hx-get="?per_page=100"> 100 </a>
+                            <a class="dropDownMenu-item" href="#" hx-get="?per_page=250"> 250 </a>
+                            <a class="dropDownMenu-item" href="#" hx-get="?per_page=500"> 500 </a>
+                            <a class="dropDownMenu-item" href="#" hx-get="?per_page=750"> 750 </a>
+                            <a class="dropDownMenu-item" href="#" hx-get="?per_page=1000"> 1000 </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

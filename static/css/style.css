@@ -63,9 +63,12 @@ body {
   width: 100%;
 }
 
-.dropDownMenu {
+.navbar ul li div.dropDownMenu {
   padding-bottom: 8px;
   padding-left: 16px;
+  background-color: transparent;
+  transform: none;
+  position: unset;
 }
 
 .dropDownMenu a:link {
@@ -108,12 +111,6 @@ body {
     color: #ffffff;
 }
 
-
-main {
-    width: 100%;
-    margin-left: 15px;
-}
-
 .version {
     opacity: 0.4; /* Текст и всё внутри элемента станет прозрачным на 50% */
     margin-top: auto;
@@ -122,11 +119,10 @@ main {
 
 /* Основной контент страницы */
 .page-body {
-  display: block; /* Возвращаем блочный макет */
-  padding: 16px; /* Устанавливаем отступы */
-  background-color: #081b2a; /* Устанавливаем цвет фона */
-  width: 100vw; /* Делаем контент шириной во весь экран */
-  padding: 0px;
+  display: flex;
+  flex-direction: column; /* Делаем главную ось по вертикали */
+  /* padding: 16px; /* Устанавливаем отступы */
+  width: 100%;
 }
 
 header {
@@ -193,4 +189,210 @@ div.user {
 
 div.user span {
   display: block;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between; /* Растягивает дочерние элементы по главной оси контейнера (первый слева, последний справа) */
+  margin-top: 1rem;
+  padding: 0px .75rem;
+}
+
+.page-header h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0px;
+}
+
+.page-header .btns {
+  gap: .5rem /* Расстояние между дочерними элементами */
+}
+
+.btn {
+  display: inline-block;
+  padding: .25rem .5rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 1px rgba(229, 231, 235, .06);
+  border-radius: 6px;
+  user-select: none; /* Запрещаем выделять текст на кнопке */
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out; /* Анимация при наведении на кнопку */
+}
+
+.btn:hover {
+  background-color: color-mix(in oklab, var(--bg-color), transparent 20%);
+  border-color: transparent;
+}
+
+.btn:focus {
+  border: 1px solid #001423;
+  outline: 2px solid #00F2D4 !important;
+}
+
+.btn:focus-visible {
+  background-color: color-mix(in oklab, #00F2D4, transparent 20%);
+  outline: 0;
+}
+
+.btn-neon-green {
+  --bg-color: #00F2D4;
+  background-color: var(--bg-color);
+  color: #001423;
+}
+
+.btn-cyan {
+  --bg-color: #17a2b8;
+  background-color: var(--bg-color);
+  color: #ffffff;
+}
+
+.btn-purple {
+  --bg-color: #AE3EC9;
+  background-color: var(--bg-color);
+  color: #ffffff;
+}
+
+.dropDownMenu {
+  background-color: #1F2937;
+  border-radius: 6px;
+  border: 1px solid rgba(72, 110, 149, .14);
+  min-width: 11rem;
+  padding: 0;
+  position: absolute; 
+  list-style-type: none; 
+  inset: 0px 0px auto auto; 
+  transform: translate(0px, 33px);
+  z-index: 1;
+}
+
+.dropDownMenu-item {
+  width: 100%;
+  display: inline-block;
+  font-weight: 400;
+  margin: 0;
+  padding: .5rem .75rem;
+  line-height: 1.5;
+  color: inherit;
+  background-color: transparent;
+  text-align: left;
+}
+
+.dropDownMenu-item:hover {
+  background-color: rgba(107, 114, 128, .08);
+}
+
+.tabs {
+  display: flex;
+  padding: 0px 1rem;
+  list-style: none;
+  margin: 0px;
+}
+
+.tab {
+  display: inline-block;
+}
+
+.tab a {
+  padding: .5rem .75rem;
+}
+
+.active-tab {
+  background-color: #081b2a;
+  margin-bottom: -1px;
+  border: 1px solid #1f2937;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+.page-content {
+  background-color: #081b2a;
+  width: 100%;
+  height: 100%;
+  padding: 0px .75rem;
+}
+
+.table-container {
+  --tbl-cont-bg: #001423;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(72, 110, 149, .14);
+  background-color: var(--tbl-cont-bg);
+  font-size: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+tr, th, td {
+  font-family: inherit;
+  font-feature-settings: "liga" 0;
+  font-weight: 500;
+  padding: 8px;
+  border-color: rgba(72,110,149,.14);
+  border-style: solid;
+  border-width: 0;
+  border-bottom-width: 1px;
+}
+
+thead th {
+  font-size: 10px;
+
+  /* Заставляем заголовок вести себя стандартно на странице, но при достижении верхней границе "прилипнуть" к ней */
+  position: sticky;
+  top: 0;
+  
+  /* z-index: 10; */
+  background-color: var(--tbl-cont-bg);
+
+  /* Рисуем тень внутри элемента (inset), не смещая по горизонтали (0), смещая по вертикали (-1px), нулевой радиус размытия (0), и цвет */
+  box-shadow: inset 0 -1px 0 color-mix(#00F2D4 30%, transparent);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  padding: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 6px;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #00F2D4;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='16' height='16'%3e%3cpath fill='none' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8.5l2.5 2.5l5.5 -5.5'/%3e%3c/svg%3e");
+  background-position: center; /* Располагаем галочку по центру */
+}
+
+.table-footer {
+  display: flex;
+  padding: .5rem;
+  align-items: center;
+  font-size: .875em;
+  color: rgba(229, 231, 235, 0.75);
+  justify-content: space-between;
+}
+
+.btn-pagination {
+  appearance: none;
+  padding: .3rem .5rem;
+  border: 1px solid #9ca3af;
+  border-radius: 6px;
+  background-color: var(--tbl-cont-bg);
+  color: #9ca3af;
+}
+
+.btn-pagination:hover {
+  background-color: #9ca3afa1;
+  color: #ffffff;
+}
+
+.btn-pagination:focus-visible {
+  background-color: var(--tbl-cont-bg);
 }

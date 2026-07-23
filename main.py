@@ -26,6 +26,25 @@ async def index(request: Request):
         request=request,
         name="index.html",
         context= {
-            "user": {"name": "admin", "role": "Администратор"}
+            "user": {"name": "admin", "role": "Администратор"},
+            "include_page": "/pages/dashboard.html",
+            "request": request
+        }
+    )
+
+# === Регионы ===
+@app.get("/company/regions/", response_class=HTMLResponse)
+async def index(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="index.html",
+        context= {
+            "user": {"name": "admin", "role": "Администратор"},
+            "include_page": "/pages/table-view.html",
+            "page_name": "Регионы",
+            "table_head": ["Имя", "Адреса", "Описание"],
+            "table_data": [["123", "234", "345"], ["123", "234", "345"], ["123", "234", "345"]],
+            "showing_records": 10, "records_out_of": 100,
+            "request": request
         }
     )
